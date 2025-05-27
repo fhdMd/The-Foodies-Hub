@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+.albert-sans-regular {
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.category {
+    display: flex;
+    justify-content: space-evenly;
+    /* Removed gap and padding for a tighter look like your original */
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* Indicate clickable */
+    /* Only scale and color on the entire circle for hover/selected */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* This targets the div that acts as the clickable area in the updated JS */
+.category > div {
+    text-decoration: none;
+    color: black;
+}
+
+/* Combined hover and selected states for the entire circle container */
+.circle:hover,
+.circle.selected {
+    transform: scale(1.025); /* Your original scale */
+    color: #640D5F; /* Text color change */
+}
+
+/* Image styling */
+.circle-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: 20% center; /* Back to your original object-position */
+    border: black 2.5px solid; /* Your original border */
+    /* Removed box-shadow for a flatter design */
+    transition: border 0.3s ease; /* Only border transition */
+}
+
+/* Hover and selected states for the image */
+.circle:hover .circle-img,
+.circle.selected .circle-img {
+    border: #640D5F 2.5px solid; /* Border color change on hover/select */
+}
+
+/* Text styling */
+.circle-text {
+    font-size: 200%; /* Your original font size */
+    /* No margin-top added, keeping it as is */
+    transition: font-size 0.3s ease, color 0.3s ease; /* Smooth transition for font size and color */
+}
+
+/* Subtle text expansion on hover/select */
+.circle:hover .circle-text,
+.circle.selected .circle-text {
+    font-size: 205%; /* Very slight increase, e.g., 200% to 205% */
+}

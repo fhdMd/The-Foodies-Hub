@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.albert-sans-regular {
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.restaurant-list {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* --- NEW: Fade-in/Fade-out Transitions --- */
+    opacity: 0; /* Default hidden state */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* State when content is loading (fading out or initially hidden) */
+.restaurant-list.fading-out {
+    opacity: 0;
+    pointer-events: none; /* Optional: prevent clicks during fade out */
+}
+
+/* State when content has loaded (fading in) */
+.restaurant-list.fading-in {
+    opacity: 1;
+    pointer-events: auto; /* Re-enable clicks */
+}
+
+.no-restaurants-message {
+    grid-column: 1 / -1; /* Span across all columns in the grid */
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+    padding: 40px 20px;
+}
+
+
+.restaurant-link {
+    text-decoration: none;
+    color: black;
+}
+
+.restaurant-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: relative;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    padding: 0;
+}
+
+.restaurant-details {
+    padding: 15px 20px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name-rating {
+    display: block;
+    margin-bottom: 10px;
+    padding-right: 70px;
+}
+
+.restaurant-name {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Albert Sans", sans-serif;
+    margin: 0;
+    white-space: normal;
+    max-height: 2.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.restaurant-rating {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Albert Sans", sans-serif;
+    padding: 4px 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 10;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.remaining-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: "Albert Sans", sans-serif;
+    color: #555;
+    margin-top: auto;
+}
+
+.type-location {
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-type,
+.restaurant-location {
+    margin: 0;
+    padding: 2px 0;
+}
+
+.restaurant-time {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Media Queries for better responsiveness */
+@media (max-width: 992px) {
+    .restaurant-list {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+    .restaurant-name {
+        font-size: 22px;
+        max-height: 2.6em;
+    }
+    .restaurant-rating {
+        font-size: 18px;
+        top: 20px;
+        right: 20px;
+    }
+    .name-rating {
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .restaurant-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .restaurant-name {
+        font-size: 20px;
+        max-height: 2.4em;
+    }
+    .restaurant-rating {
+        font-size: 18px;
+        top: 15px;
+        right: 15px;
+    }
+    .remaining-details {
+        font-size: 14px;
+    }
+    .restaurant-img {
+        height: 180px;
+    }
+    .name-rating {
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .restaurant-list {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    .restaurant-card {
+        margin: 0;
+    }
+    .restaurant-name {
+        font-size: 22px;
+        max-height: 2.6em;
+    }
+    .restaurant-rating {
+        font-size: 18px;
+        top: 15px;
+        right: 15px;
+    }
+    .remaining-details {
+        font-size: 14px;
+    }
+    .restaurant-img {
+        height: 160px;
+    }
+    .name-rating {
+        padding-right: 60px;
+    }
+}

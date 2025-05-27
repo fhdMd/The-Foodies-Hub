@@ -1,0 +1,496 @@
+/* Base Styles & Variables (Refined with more vibrant tones and depth) */
+:root {
+  --primary-color: #640d5f; /* Deep Purple */
+  --primary-dark: #4a0947; /* Even darker purple */
+  --primary-light: #f0e6ef; /* Light purple for subtle accents */
+  --secondary-color: #8c427b; /* Medium Purple/Magenta */
+  --text-color: #333; /* Dark gray for main text */
+  --text-light: #666; /* Lighter gray for secondary text */
+  --light-gray: #f8f8f8; /* Very light background for page */
+  --card-bg-light: #ffffff; /* Explicitly white for card background */
+  --card-header-bg: #fdfcff; /* Very light purple tint for header/footer sections */
+  --medium-gray: #dcdcdc; /* Slightly darker grey for borders */
+  --dark-gray: #444; /* For strong but not black text */
+  --white: #ffffff;
+  --success-color: #67c23a; /* Green */
+  --warning-color: #e6a23c; /* Amber */
+  --info-color: #409eff; /* Blue */
+  --error-color: #f56c6c; /* Red */
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --border-radius: 12px;
+  --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+body {
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /* Smoother fonts */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout */
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.profile-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding: 3.5rem 1.5rem; /* Increased padding */
+  gap: 2rem; /* More space between sections */
+  width: 100%;
+}
+
+.profile-main-content {
+  width: 100%;
+  max-width: 900px; /* Slightly wider for more content */
+}
+
+/* Message Banner */
+.message-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid;
+  margin-bottom: 1.5rem; /* Space below banner */
+}
+.message-banner.error {
+  background-color: #f56c6c15; /* Using direct color for clarity */
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+.message-banner svg {
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+/* Order History Section */
+.order-history-section {
+  width: 100%;
+  text-align: center;
+}
+
+.order-history-heading {
+  font-size: 2.8rem; /* Larger heading */
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.order-history-subheading {
+  font-size: 1.2rem; /* Slightly larger subheading */
+  color: var(--text-light);
+  margin-bottom: 4rem; /* More space */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Loading/Empty States */
+.loading-container,
+.empty-orders {
+  background-color: var(--card-bg-light);
+  padding: 4rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  color: var(--dark-gray);
+  border: 1px solid var(--medium-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loading-spinner {
+  font-size: 3.5rem; /* Larger spinner */
+  color: var(--primary-color);
+  animation: spin 1.5s linear infinite;
+  margin-bottom: 1.5rem;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.empty-orders h3 {
+  font-size: 1.8rem; /* Larger empty state heading */
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+.empty-orders p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+.empty-orders .btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.9rem 2.5rem; /* Larger button */
+  border-radius: 50px;
+  font-size: 1.05rem; /* Slightly larger font */
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.empty-orders .btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Order List */
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Increased gap between cards */
+}
+
+/* --- New Order Card (order-card-new) --- */
+.order-card-new {
+  background-color: var(--card-bg-light); /* Explicit white background */
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--medium-gray); /* Clear border */
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+  /* Add a subtle background pattern or gradient here if desired for more visual interest */
+  background-image: radial-gradient(circle at top left, var(--primary-light) 5%, transparent 15%),
+                    radial-gradient(circle at bottom right, var(--secondary-color) 5%, transparent 15%);
+  background-size: 100% 100%; /* Cover the entire card */
+  background-repeat: no-repeat;
+}
+
+.order-card-new:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-5px); /* More pronounced lift on hover */
+  border-color: var(--secondary-color); /* Highlight border on hover */
+}
+
+/* Card Header */
+.order-card-new-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem; /* More padding */
+  background-color: var(--card-header-bg); /* Light purple tint */
+  border-bottom: 1px solid var(--medium-gray); /* Clearer separator */
+  position: relative;
+  overflow: hidden;
+}
+
+.restaurant-info-new h4 {
+  font-size: 1.6rem; /* Larger restaurant name */
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0 0 6px 0;
+  position: relative;
+  z-index: 1; /* Ensure text is above any potential background elements */
+}
+
+.restaurant-info-new span {
+  font-size: 1rem; /* Slightly larger location text */
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 8px; /* More space for icon */
+  position: relative;
+  z-index: 1;
+}
+.restaurant-info-new span svg {
+  color: var(--secondary-color);
+  font-size: 1.2em; /* Larger icon */
+}
+
+.order-status-new {
+  padding: 8px 18px; /* More padding for status badge */
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem; /* Slightly larger font for status */
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.7px;
+  border: 1px solid currentColor;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+  /* Added a subtle glow effect */
+  animation: pulse-status 2s infinite ease-in-out;
+}
+
+@keyframes pulse-status {
+  0% { box-shadow: 0 0 0 0px rgba(currentColor, 0.7); }
+  50% { box-shadow: 0 0 0 5px rgba(currentColor, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(currentColor, 0.7); }
+}
+
+.order-status-new svg {
+  font-size: 1.3em; /* Larger icon for status */
+}
+
+/* Card Body */
+.order-card-new-body {
+  padding: 2rem; /* More padding */
+  background-color: #fcfcfc; /* A slightly off-white for body */
+  border-bottom: 1px solid #eee; /* Light separator */
+}
+
+.order-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for larger items */
+  gap: 1.8rem; /* Increased gap */
+  margin-bottom: 2.5rem; /* More space below grid */
+  padding-bottom: 2rem; /* More padding */
+  border-bottom: 1px dashed var(--medium-gray);
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px; /* More space for icon */
+  background-color: var(--light-gray); /* Background for each detail item */
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for detail items */
+  transition: transform 0.2s ease-in-out;
+}
+.detail-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.detail-item.full-span {
+  grid-column: 1 / -1;
+}
+
+.detail-item svg {
+  font-size: 1.7rem; /* Larger icons for details */
+  color: var(--primary-color);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.detail-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item span {
+  font-size: 0.95rem; /* Larger label for detail items */
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.detail-item strong {
+  font-size: 1.1rem; /* Larger value for detail items */
+  color: var(--dark-gray);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.order-items-section h5 {
+  font-size: 1.4rem; /* Significantly larger heading for order items */
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin-bottom: 1.5rem;
+  text-align: left; /* Align to left */
+  border-left: 5px solid var(--secondary-color); /* Added a left border */
+  padding-left: 1rem; /* Padding for the text */
+  line-height: 1; /* Adjust line height for better alignment with border */
+}
+
+.order-items-list-new {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px; /* Increased height for items list */
+  overflow-y: auto;
+  padding-right: 15px; /* More space for scrollbar */
+  border: 1px solid var(--medium-gray);
+  border-radius: 10px; /* Slightly more rounded list */
+  background-color: var(--light-gray);
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+}
+
+.order-items-list-new li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 18px; /* More padding for list items */
+  font-size: 1rem; /* Slightly larger font for list items */
+  border-bottom: 1px solid #e9e9e9; /* Solid, clearer separator */
+  background-color: var(--card-bg-light); /* White background for each item */
+  transition: background-color 0.2s ease;
+}
+.order-items-list-new li:last-child {
+  border-bottom: none;
+}
+.order-items-list-new li:nth-child(even) {
+  background-color: #fcfcff; /* Subtle striped effect */
+}
+.order-items-list-new li:hover {
+  background-color: #f5f5f5; /* Light hover effect */
+}
+
+.order-items-list-new li span:first-child {
+  color: var(--text-color);
+  font-weight: 500;
+}
+.order-items-list-new li span:last-child {
+  font-weight: 700; /* Bolder price */
+  color: var(--primary-color);
+}
+
+/* Card Footer */
+.order-card-new-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.5rem 2rem; /* More padding */
+  background-color: var(--card-header-bg); /* Light purple tint */
+  border-top: 1px solid var(--medium-gray);
+}
+
+.order-total-new {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 1.8rem; /* More padding */
+  border-radius: 10px; /* Slightly more rounded */
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  transition: var(--transition);
+}
+.order-total-new:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.order-total-new span {
+  font-size: 0.9rem; /* Larger label */
+  opacity: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.order-total-new strong {
+  font-size: 1.8rem; /* Larger total amount */
+  font-weight: 800; /* Extra bold */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .order-history-heading {
+    font-size: 2.2rem;
+  }
+  .order-history-subheading {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+  .profile-content-wrapper {
+    padding: 2.5rem 1rem;
+  }
+  .order-card-new-header,
+  .order-card-new-body,
+  .order-card-new-footer {
+    padding: 1.2rem 1.5rem; /* Adjusted padding */
+  }
+  .restaurant-info-new h4 {
+    font-size: 1.3rem;
+  }
+  .order-details-grid {
+    grid-template-columns: 1fr; /* Stack items on small screens */
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .detail-item.full-span {
+    grid-column: span 1;
+  }
+  .detail-item {
+    padding: 12px;
+    gap: 10px;
+  }
+  .detail-item svg {
+    font-size: 1.4rem;
+  }
+  .detail-item span {
+    font-size: 0.9rem;
+  }
+  .detail-item strong {
+    font-size: 1rem;
+  }
+  .order-items-section h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-left: 0.8rem;
+  }
+  .order-items-list-new {
+    max-height: 150px;
+    padding-right: 8px;
+  }
+  .order-items-list-new li {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+  .order-total-new {
+    padding: 0.9rem 1.6rem;
+  }
+  .order-total-new strong {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-history-heading {
+    font-size: 1.8rem;
+  }
+  .order-card-new-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .order-status-new {
+    align-self: flex-start;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+  .restaurant-info-new h4 {
+    font-size: 1.1rem;
+  }
+  .restaurant-info-new span {
+    font-size: 0.85rem;
+  }
+  .order-total-new strong {
+    font-size: 1.4rem;
+  }
+  .order-items-list-new li {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+  .profile-main-content {
+    padding: 0 10px;
+  }
+}

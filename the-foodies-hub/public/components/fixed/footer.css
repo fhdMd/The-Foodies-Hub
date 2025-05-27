@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+.albert-sans-regular {
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+footer .footer-bar {
+  background-color: #e9e9e9;
+  padding: 50px 0px;
+}
+
+footer .footer-bar .footer-links{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer .footer-bar .footer-links a{
+  text-decoration: none;
+  color: #000;
+  font-size: 32px;
+}
+
+footer .footer-bar .footer-links a:hover{
+  color: #640D5F;
+  transition:calc(0.3s) ease-in-out;
+}
+
+footer .footer-bar .social{
+ display: flex;
+  justify-content: space-evenly;
+}
+
+footer .footer-bar .social .ghost{
+  opacity: 0;
+}
+
+footer .footer-bar .social .ghost a img{
+  max-width: 32px;
+  max-height: 32px;
+}
+
+footer .footer-bar .social .socials a img{
+  max-width: 32px;
+  max-height: 32px;
+  transition: transform 0.3s ease;
+ }
+
+ footer .footer-bar .social .socials a :hover{
+  transform: scale(1.2);
+  transition: calc(0.2s) ease-in-out;
+ }
+
+ footer{
+  margin-top: 35px;
+ }
+

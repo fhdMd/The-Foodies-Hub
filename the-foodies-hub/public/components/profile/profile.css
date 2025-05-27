@@ -1,0 +1,211 @@
+/* Base Styles - Adopted from user.css */
+:root {
+    --primary-color: #640D5F;
+    --primary-dark: #4a0947;
+    --primary-light: #f0e6ef;
+    --text-color: #333;
+    --light-gray: #f7f7f7;
+    --medium-gray: #e0e0e0;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+/* Ensure body styles are consistent if not already in a global CSS */
+body {
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Layout for the profile page, similar to login */
+.profile-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.profile-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.profile-form-card {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    width: 100%;
+    max-width: 800px; /* Wider for profile details */
+    margin: 2rem 0;
+}
+
+/* Heading */
+.profile-heading {
+    font-size: 2.5rem; /* Equivalent to 40px */
+    font-weight: 800; /* Extrabold */
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem; /* Equivalent to 32px */
+}
+
+/* Form Grid Layout */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Equivalent to 24px */
+}
+
+@media (min-width: 768px) { /* md breakpoint for grid */
+    .profile-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap-x: 3rem; /* Equivalent to 48px */
+    }
+    .profile-grid .full-width { /* For bio field */
+        grid-column: span 2;
+    }
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 0; /* Handled by grid gap */
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.25rem; /* Equivalent to 4px */
+    font-size: 0.875rem; /* Equivalent to 14px */
+    font-weight: 500; /* Medium */
+    color: var(--text-color); /* Changed from purple-700 to gray-700 */
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem; /* Equivalent to px-4 py-3 */
+    border: 1px solid var(--medium-gray); /* Equivalent to border-gray-300 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to shadow-sm */
+    font-size: 1.125rem; /* Equivalent to sm:text-lg */
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Equivalent to focus:border-purple-500 */
+    box-shadow: 0 0 0 3px var(--primary-light); /* Equivalent to focus:ring-purple-500 */
+}
+
+.form-input.read-only {
+    background-color: var(--light-gray); /* Equivalent to bg-gray-50 */
+    cursor: not-allowed;
+}
+
+/* Textarea specific styles */
+textarea.form-input {
+    resize: vertical; /* Allow vertical resize */
+    min-height: 90px; /* Equivalent to rows-3 for initial height */
+}
+
+/* Action Buttons */
+.button-group {
+    padding-top: 1.5rem; /* Equivalent to pt-6 */
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem; /* Equivalent to space-x-4 */
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem; /* Equivalent to px-6 py-3 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    font-weight: 500; /* Medium */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to shadow-sm */
+    transition: var(--transition);
+    cursor: pointer;
+    border: none; /* Default for buttons */
+}
+
+.btn-primary {
+    background-color: var(--primary-color); /* Equivalent to bg-purple-600 */
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark); /* Equivalent to hover:bg-purple-700 */
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--text-color); /* Equivalent to text-gray-700 */
+    border: 1px solid var(--medium-gray); /* Equivalent to border-gray-300 */
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-gray); /* Equivalent to hover:bg-gray-50 */
+}
+
+/* Account Security Section */
+.security-section {
+    border-top: 1px solid var(--medium-gray); /* Equivalent to border-gray-200 */
+    padding-top: 2rem; /* Equivalent to pt-8 */
+    margin-top: 2rem; /* Equivalent to mt-8 */
+}
+
+.security-heading {
+    font-size: 1.5rem; /* Equivalent to 2xl */
+    font-weight: 700; /* Bold */
+    color: var(--text-color);
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+}
+
+/* Message Banner for success/error */
+.message-banner {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.message-banner.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border: 1px solid #c3e6cb;
+}
+
+.message-banner.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .profile-form-card {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    .profile-heading {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .form-input {
+        padding: 0.6rem 0.8rem;
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+    .security-heading {
+        font-size: 1.25rem;
+    }
+}

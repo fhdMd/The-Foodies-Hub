@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Konkhmer+Sleokchher&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+.header{
+    display: flex;
+    justify-content:space-between;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.header a{
+    text-decoration: none;
+    color: black;
+}
+
+.home-link{
+    margin-top: 50px;
+    margin-left: 50px;
+    padding-bottom: 50px;
+    font-family: 'Sansita', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.header a.home-link:hover{
+    transition: calc(0.3s) ease-in-out;
+    color: #640D5F;
+}
+
+.user{
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.user a{
+    margin-right: 60px;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 32px;
+}
+
+.user a:hover{
+    transition: calc(0.3s) ease-in-out;
+    color: #640D5F;
+}
+
+.user .profile img,.user .cart img{
+    height: 48px;
+    width: 48px;
+}
+
+.user{
+    display: flex;
+}
+
+.profile, .cart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile img, .cart img{
+    margin-right: 5px;
+}
