@@ -12,8 +12,8 @@ interface Props {
 const menu = async ({ params }: Props) => {
   const { rId } = params;
   console.log(rId);
-  const items = await fetch(`http://localhost:8080/menu/${rId}`);
-  const restaurant = await fetch(`http://localhost:8080/restaurant/${rId}`);
+  const items = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/menu/${rId}`);
+  const restaurant = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/restaurant/${rId}`);
   const data = await items.json();
   const rData = await restaurant.json();
   return (

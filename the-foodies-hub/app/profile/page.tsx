@@ -97,7 +97,7 @@ const ProfilePage: React.FC = () => {
     setError(null);
 
     try {
-      const response = await fetch(`http://localhost:8080/cart/${userId}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${userId}`);
       if (response.ok) {
         let data: Order[] = await response.json();
         data.sort(

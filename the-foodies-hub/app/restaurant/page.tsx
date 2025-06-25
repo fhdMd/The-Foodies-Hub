@@ -44,7 +44,7 @@ const RestaurantPage = () => {
       // Check if the component is still mounted after the delay (prevents errors on rapid unmount/re-render)
       if (!isMounted) return;
 
-      let url = "http://localhost:8080/restaurant";
+      let url = `${process.env.NEXT_PUBLIC_API_URL}/restaurant`;
       if (selectedCuisine) {
         url += `?cuisineType=${selectedCuisine}`;
       }

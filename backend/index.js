@@ -12,7 +12,7 @@ const cartRoutes = require('./routes/cartRoutes');
 const app = express();
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/TheFoodiesHub')
+mongoose.connect('mongodb+srv://fahdmhd1707:GheeRoastDosa@clusterchicken.cb3zuke.mongodb.net/TheFoodiesHub?retryWrites=true&w=majority&appName=ClusterChicken')
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('MongoDB connection error:', err));
 

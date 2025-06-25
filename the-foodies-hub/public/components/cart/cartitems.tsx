@@ -314,7 +314,7 @@ const CartItems = () => {
     console.log("Placing order with payload:", orderPayload);
 
     try {
-      const response = await fetch("http://localhost:8080/cart", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
