@@ -146,18 +146,17 @@
     box-shadow: 0 2px 8px rgba(100,13,95,0.08);
   }
   .menu-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
   }
   .menu-item {
-    align-items: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 95vw;
+    min-width: 0;
+    aspect-ratio: 4/5;
   }
-  .image-and-button {
-    align-items: center;
+  .image-and-button img {
+    aspect-ratio: 4/3;
   }
 }
 
@@ -381,21 +380,32 @@ body {
 }
 
 .menu-list {
-    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1rem;
+    justify-items: center;
 }
 
 .menu-item {
+    width: 100%;
+    max-width: 20rem;
+    min-width: 16rem;
+    aspect-ratio: 4/5;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 20px 0;
-    font-family: 'Albert Sans', sans-serif;
+    align-items: stretch;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(100,13,95,0.08);
+    margin: 0 auto 1rem auto;
+    transition: box-shadow 0.2s, transform 0.2s;
+    background: #fff;
+    text-align: left;
 }
 
 .image-and-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    width: 100%;
+    align-items: stretch;
 }
 
 .item-name {
@@ -422,11 +432,10 @@ body {
 }
 
 .image-and-button img {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    aspect-ratio: 4/3;
     object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 1rem 1rem 0 0;
 }
 
 .add-button {
