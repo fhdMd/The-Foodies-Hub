@@ -11,9 +11,10 @@
 .env.production.local
 
 # Next.js build output and cache
-/frontend/.next
-/frontend/.swc
-/frontend/out
+/the-foodies-hub/.next
+/the-foodies-hub/.swc
+/the-foodies-hub/out
+/the-foodies-hub/.env.local
 
 # VSCode settings
 .vscode/

@@ -52,6 +52,7 @@ const RestaurantPage = () => {
 
       try {
         const response = await fetch(url);
+        console.log("Fetching restaurants from:", url);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

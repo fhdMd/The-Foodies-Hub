@@ -1,0 +1,32 @@
+# This is the corrected version of your Docker Compose file.
+
+# docker-compose.yaml
+services:
+  frontend:
+    build:
+      context: ./the-foodies-hub
+      dockerfile: Dockerfile
+    container_name: nextjs-frontend
+    ports:
+      - "3000:3000"
+    # ADD this new variable for server-side communication
+    environment:
+      - INTERNAL_API_URL=http://backend:8080
+    depends_on:
+      - backend
+
+  # Service definition for the Node.js backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nodejs-backend
+    ports:
+      # Maps host port 5000 to the container's port 8080.
+      - "5000:8080"
+    # REMOVED: The hardcoded environment variables.
+    # ADDED: The 'env_file' directive to correctly load variables from your .env file.
+    env_file:
+      - .env
+
+# Note: You don't need to define a database service here since you are using MongoDB Atlas.
