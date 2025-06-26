@@ -21,6 +21,13 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function (origin, callback) {
+      // --- START OF DIAGNOSTIC LOGGING ---
+    console.log("=============================");
+    console.log("INCOMING REQUEST ORIGIN:", origin);
+    console.log("FRONTEND_URL from env:", process.env.FRONTEND_URL);
+    console.log("FULL 'GUEST LIST':", allowedOrigins);
+    console.log("=============================");
+    // --- END OF DIAGNOSTIC LOGGING ---
     // allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
