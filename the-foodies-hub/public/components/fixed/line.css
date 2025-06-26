@@ -1,4 +1,16 @@
 .line{
-    margin-right: 60px;
-    margin-left: 70px;
+    margin-right: 3.75rem;
+    margin-left: 4.375rem;
+}
+@media (max-width: 768px) {
+    .line {
+        margin-right: 1.5rem;
+        margin-left: 2rem;
+    }
+}
+@media (max-width: 480px) {
+    .line {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
 }

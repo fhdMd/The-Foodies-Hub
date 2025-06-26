@@ -36,13 +36,13 @@
 
 /* Image styling */
 .circle-img {
-    width: 250px;
-    height: 250px;
+    width: 15.625rem;
+    height: 15.625rem;
     border-radius: 50%;
     object-fit: cover;
     overflow: hidden;
     object-position: 20% center; /* Back to your original object-position */
-    border: black 2.5px solid; /* Your original border */
+    border: black 0.156rem solid;
     /* Removed box-shadow for a flatter design */
     transition: border 0.3s ease; /* Only border transition */
 }
@@ -55,7 +55,7 @@
 
 /* Text styling */
 .circle-text {
-    font-size: 200%; /* Your original font size */
+    font-size: 2rem;
     /* No margin-top added, keeping it as is */
     transition: font-size 0.3s ease, color 0.3s ease; /* Smooth transition for font size and color */
 }
@@ -64,4 +64,23 @@
 .circle:hover .circle-text,
 .circle.selected .circle-text {
     font-size: 205%; /* Very slight increase, e.g., 200% to 205% */
+}
+
+@media (max-width: 768px) {
+    .circle-img {
+        width: 8rem;
+        height: 8rem;
+    }
+    .circle-text {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 480px) {
+    .circle-img {
+        width: 5rem;
+        height: 5rem;
+    }
+    .circle-text {
+        font-size: 1rem;
+    }
 }

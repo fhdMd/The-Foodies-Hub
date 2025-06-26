@@ -37,21 +37,21 @@ body {
 
 .profile-form-card {
     background: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
     padding: 3rem;
     width: 100%;
-    max-width: 800px; /* Wider for profile details */
+    max-width: 90vw;
     margin: 2rem 0;
 }
 
 /* Heading */
 .profile-heading {
-    font-size: 2.5rem; /* Equivalent to 40px */
+    font-size: 2.5rem;
     font-weight: 800; /* Extrabold */
     color: var(--text-color);
     text-align: center;
-    margin-bottom: 2rem; /* Equivalent to 32px */
+    margin-bottom: 2rem;
 }
 
 /* Form Grid Layout */
@@ -190,7 +190,7 @@ textarea.form-input {
 /* Responsive Adjustments */
 @media (max-width: 600px) {
     .profile-form-card {
-        padding: 2rem;
+        padding: 1.5rem;
         margin: 1rem;
     }
     .profile-heading {
@@ -198,7 +198,6 @@ textarea.form-input {
         margin-bottom: 1.5rem;
     }
     .form-input {
-        padding: 0.6rem 0.8rem;
         font-size: 1rem;
     }
     .btn {

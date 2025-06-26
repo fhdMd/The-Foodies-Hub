@@ -6,7 +6,7 @@
     background-color: white;
     margin: 0;
     padding: 0;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
 }
 
 .header a{
@@ -15,11 +15,11 @@
 }
 
 .home-link{
-    margin-top: 50px;
-    margin-left: 50px;
-    padding-bottom: 50px;
+    margin-top: 3.125rem;
+    margin-left: 3.125rem;
+    padding-bottom: 3.125rem;
     font-family: 'Sansita', sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 700;
     font-style: italic;
 }
@@ -30,14 +30,14 @@
 }
 
 .user{
-    margin-top: 50px;
-    padding-bottom: 50px;
+    margin-top: 3.125rem;
+    padding-bottom: 3.125rem;
 }
 
 .user a{
-    margin-right: 60px;
+    margin-right: 3.75rem;
     font-family: 'Albert Sans', sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 .user a:hover{
@@ -45,9 +45,9 @@
     color: #640D5F;
 }
 
-.user .profile img,.user .cart img{
-    height: 48px;
-    width: 48px;
+.user .profile img, .user .cart img {
+    height: 1.2rem;
+    width: 1.2rem;
 }
 
 .user{
@@ -61,5 +61,17 @@
 }
 
 .profile img, .cart img{
-    margin-right: 5px;
+    margin-right: 0.3125rem;
+}
+
+@media (max-width: 768px) {
+    .home-link {
+        margin-top: 1.5rem;
+        margin-left: 1.5rem;
+        padding-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .user {
+        margin-top: 1.5rem;
+    }
 }
