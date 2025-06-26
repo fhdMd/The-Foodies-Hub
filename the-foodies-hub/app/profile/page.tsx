@@ -80,7 +80,7 @@ const ProfilePage: React.FC = () => {
       try {
         const parsedUser = JSON.parse(userDataString);
         setUserId(parsedUser._id || parsedUser.id);
-      } catch (_e) {
+      } catch {
         showMessage(`User data issue. Please log in again.`);
         router.push("/login");
       }
@@ -108,7 +108,7 @@ const ProfilePage: React.FC = () => {
       } else {
         setError("Failed to fetch orders. Please try again later.");
       }
-    } catch (_err) {
+    } catch {
       setError("Network error. Could not connect to the server.");
     } finally {
       setLoading(false);
