@@ -145,6 +145,20 @@
     transform: scale(1.03);
     box-shadow: 0 2px 8px rgba(100,13,95,0.08);
   }
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-item {
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .image-and-button {
+    align-items: center;
+  }
 }
 
 /* Existing styles below */

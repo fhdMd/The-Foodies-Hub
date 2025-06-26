@@ -74,4 +74,14 @@
     .user {
         margin-top: 1.5rem;
     }
+    .user a {
+        font-size: 1rem;
+        margin-right: 1rem;
+    }
+}
+@media (max-width: 480px) {
+    .user a {
+        font-size: 0.7rem;
+        margin-right: 0.5rem;
+    }
 }

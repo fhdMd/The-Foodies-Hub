@@ -190,6 +190,11 @@ body {
     .restaurant-list {
         padding: 0 0.25rem;
         gap: 0.5rem;
+        justify-items: center;
+    }
+    .restaurant-card {
+        margin-left: auto;
+        margin-right: auto;
     }
     .restaurant-card {
         margin: 0;
