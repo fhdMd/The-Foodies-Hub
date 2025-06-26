@@ -80,8 +80,8 @@ const ProfilePage: React.FC = () => {
       try {
         const parsedUser = JSON.parse(userDataString);
         setUserId(parsedUser._id || parsedUser.id);
-      } catch (e) {
-        showMessage("User data issue. Please log in again.");
+      } catch (_e) {
+        showMessage(`User data issue. Please log in again.`);
         router.push("/login");
       }
     } else {
@@ -99,7 +99,7 @@ const ProfilePage: React.FC = () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${userId}`);
       if (response.ok) {
-        let data: Order[] = await response.json();
+        const data: Order[] = await response.json();
         data.sort(
           (a, b) =>
             new Date(b.orderDate).getTime() - new Date(a.orderDate).getTime()
@@ -108,7 +108,7 @@ const ProfilePage: React.FC = () => {
       } else {
         setError("Failed to fetch orders. Please try again later.");
       }
-    } catch (err) {
+    } catch (_err) {
       setError("Network error. Could not connect to the server.");
     } finally {
       setLoading(false);
@@ -135,7 +135,7 @@ const ProfilePage: React.FC = () => {
           <div className="order-history-section">
             <h2 className="order-history-heading">Your Food Journey</h2>
             <p className="order-history-subheading">
-              A look back at all the delicious meals you've enjoyed.
+              A look back at all the delicious meals you&apos;ve enjoyed.
             </p>
 
             {loading ? (

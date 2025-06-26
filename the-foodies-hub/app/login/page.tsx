@@ -111,7 +111,7 @@ const UserLogin: React.FC = () => {
             Forgot password?
           </a>
           <p className="signup-text">
-            Don't have an account? <a href="/signup">Sign up</a>
+            Don&apos;t have an account? <a href="/signup">Sign up</a>
           </p>
         </div>
       </form>
