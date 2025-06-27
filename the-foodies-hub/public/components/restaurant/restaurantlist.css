@@ -238,11 +238,4 @@ body {
     .name-rating {
         padding-right: 1.5rem;
     }
-    .restaurant-type {
-        max-width: 90%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        display: block;
-    }
 }
