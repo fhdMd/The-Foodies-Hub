@@ -55,14 +55,15 @@
 
 /* Text styling */
 .circle-text {
-    font-size: clamp(1rem, 2vw + 0.5rem, 2rem);
-    transition: font-size 0.3s ease, color 0.3s ease;
+    font-size: 2rem;
+    /* No margin-top added, keeping it as is */
+    transition: font-size 0.3s ease, color 0.3s ease; /* Smooth transition for font size and color */
 }
 
 /* Subtle text expansion on hover/select */
 .circle:hover .circle-text,
 .circle.selected .circle-text {
-    font-size: clamp(1.05rem, 2.1vw + 0.5rem, 2.05rem);
+    font-size: 205%; /* Very slight increase, e.g., 200% to 205% */
 }
 
 @media (max-width: 768px) {
@@ -71,11 +72,7 @@
         height: 8rem;
     }
     .circle-text {
-        font-size: clamp(0.8rem, 1.5vw + 0.5rem, 1.2rem);
-    }
-    .circle:hover .circle-text,
-    .circle.selected .circle-text {
-        font-size: clamp(0.85rem, 1.6vw + 0.5rem, 1.25rem);
+        font-size: 1.2rem;
     }
 }
 @media (max-width: 480px) {
@@ -84,10 +81,6 @@
         height: 5rem;
     }
     .circle-text {
-        font-size: clamp(0.7rem, 1vw + 0.5rem, 1rem);
-    }
-    .circle:hover .circle-text,
-    .circle.selected .circle-text {
-        font-size: clamp(0.75rem, 1.1vw + 0.5rem, 1.05rem);
+        font-size: 1rem;
     }
 }
