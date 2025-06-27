@@ -56,14 +56,6 @@ footer .footer-bar .social .socials a img{
   margin-top: 2.2rem;
  }
 
-.home-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    z-index: 100;
-}
-
 @media (max-width: 768px) {
     footer .footer-bar {
         padding: 1.5rem 0;
@@ -78,9 +70,6 @@ footer .footer-bar .social .socials a img{
     }
     footer {
         margin-top: 1rem;
-    }
-    .home-footer {
-        font-size: 1.2rem;
     }
 }
 @media (max-width: 480px) {
@@ -97,9 +86,6 @@ footer .footer-bar .social .socials a img{
     }
     footer {
         margin-top: 0.5rem;
-    }
-    .home-footer {
-        font-size: 1rem;
     }
 }
 

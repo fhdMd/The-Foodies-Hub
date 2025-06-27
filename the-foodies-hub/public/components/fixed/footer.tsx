@@ -45,7 +45,7 @@ const Socials = () => {
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-bar home-footer">
+      <div className="footer-bar">
         <Links />
         <Socials />
       </div>
